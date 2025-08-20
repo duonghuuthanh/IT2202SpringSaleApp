@@ -60,12 +60,12 @@ public class HibernateConfigs {
         return props;
     }
 
-//    @Bean
-//    public HibernateTransactionManager transactionManager() {
-//        HibernateTransactionManager transactionManager
-//                = new HibernateTransactionManager();
-//        transactionManager.setSessionFactory(
-//                getSessionFactory().getObject());
-//        return transactionManager;
-//    }
+    @Bean
+    public HibernateTransactionManager transactionManager() {
+        HibernateTransactionManager transactionManager
+                = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(
+                getSessionFactory().getObject());
+        return transactionManager;
+    }
 }

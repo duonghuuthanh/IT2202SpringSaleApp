@@ -4,7 +4,7 @@
  */
 package com.dht.controllers;
 
-import com.dht.repositories.impl.ProductRepositoryImpl;
+import com.dht.services.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class ApiProductController {
     @Autowired
-    private ProductRepositoryImpl prodRepo;
+    private ProductServices prodService;
     
     @DeleteMapping("/products/{productId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable(value = "productId") int id) {
-        this.prodRepo.deleteProduct(id);
+        this.prodService.deleteProduct(id);
     }
 }
